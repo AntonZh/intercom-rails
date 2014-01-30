@@ -124,7 +124,14 @@ module IntercomRails
       private
 
       def custom_data_from_request
-        search_object.intercom_custom_data.send(type)
+        puts "type: #{type}"
+
+        res = search_object.intercom_custom_data.send(type)
+
+        puts "res: "
+        puts res
+
+        res
       rescue NoMethodError
         {}
       end

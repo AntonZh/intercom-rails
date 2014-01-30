@@ -126,6 +126,8 @@ module IntercomRails
       def custom_data_from_request
         puts "type: #{type}"
 
+        binding.pry
+
         res = search_object.intercom_custom_data.send(type)
 
         puts "res: "
